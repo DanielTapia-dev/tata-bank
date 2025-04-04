@@ -1,0 +1,28 @@
+@import "src/styles/variables";
+
+.header {
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      height: 24px;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      color: $accent-color;
+      letter-spacing: 1px;
+      font-family: $font-family;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<section class="products-page">
+  <div class="page-header">
+    <app-search-bar (search)="applyFilter($event)"></app-search-bar>
+    <button class="primary" (click)="createProduct()">Agregar</button>
+  </div>
+
+  <div class="page-body">
+    <app-table
+      [tableColumns]="tableColumns"
+      [data]="filteredProducts"
+      (onEdit)="editProduct($event)"
+      (onDelete)="openDeleteModal($event)"
+    >
+    </app-table>
+  </div>
+</section>
+
+<app-confirm-modal
+  *ngIf="showConfirmModal"
+  [title]="'Eliminar producto'"
+  [message]="deleteMessage"
+  [confirmText]="'Eliminar'"
+  [cancelText]="'Cancelar'"
+  [icon]="'assets/img/remove.png'"
+  (confirm)="confirmDelete()"
+  (cancel)="cancelDelete()"
+></app-confirm-modal>
